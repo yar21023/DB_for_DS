@@ -9,13 +9,14 @@
 # Решение
 
 ## Анализ таблиц и подготовка данных
-Процесс анализа данных и их подготовке с подробными комментариями содержится в файле [db_hw1.ipynb](https://github.com/yar21023/DB_for_DS/blob/main/db_hw1.ipynb)
+Процесс анализа данных и их подготовке с подробными комментариями содержится в файле [db_hw1.ipynb](https://github.com/yar21023/DB_for_DS/blob/main/db_hw1.ipynb). 
 В рамках анализа было выявленно:
 1. Представленные данные уже находится в первой нормальной форме, так как значения всех колонок скалярны;
 2. Записи в колонке gender имеют разный формат;
 3. Вторая нормальная форма подразумевает что каждый столбец, который не является ключом, зависит от первичного ключа. Информация о товаре из таблицы transactions не зависит от непосредственно транзакции. Для приведения БД ко второй нормальной форме необходимо выделить в отдельную таблицу информацию о товаре;
 4. Колонка product_id не является уникальным идентификатором конкретного товара, так как одному и тому же id соответсвуют разные товары;
 5. Колонки "list_price" и "standard_cost" не имеют очевидной взаимосвязи с id продукта, поэтому разумней оставить их в таблице транзакций;
+
 Для подготовки данных были произведены следующие операции:
 1. Записи в колонке gender приведены к одному стандарту;
 2. Информация о товаре выделена в отдельную таблицу product, с атрибутами "brand", "product_line", "product_class", "product_size", "product_id", а для использования в качестве первичного ключа сгенерирован суррогатный ключ.
@@ -29,12 +30,16 @@
 Визуальное представление схемы [diagram (dbdiagram.io).JPG](https://github.com/yar21023/DB_for_DS/blob/main/diagram%20(dbdiagram.io).JPG)
 
 ## Создание таблиц
-SQL скрипт создания таблиц [Script.sql](https://github.com/yar21023/DB_for_DS/blob/main/Script.sql)
-Скриншот скрипта [scripts.JPG](https://github.com/yar21023/DB_for_DS/blob/main/scripts.JPG)
+*SQL скрипт создания таблиц [Script.sql](https://github.com/yar21023/DB_for_DS/blob/main/Script.sql);
+
+*Скриншот скрипта [scripts.JPG](https://github.com/yar21023/DB_for_DS/blob/main/scripts.JPG).
 
 ## Заполнение данных
 Заполнение БД в PostgeSQL:  
-    *[Продукты](https://github.com/yar21023/DB_for_DS/blob/main/products.JPG)  
-    *[Клиенты](https://github.com/yar21023/DB_for_DS/blob/main/customers.JPG)  
-    *[Транзакции](https://github.com/yar21023/DB_for_DS/blob/main/transactions.JPG)
-    *[Диаграмма](https://github.com/yar21023/DB_for_DS/blob/main/diagram.JPG) 
+*[Продукты](https://github.com/yar21023/DB_for_DS/blob/main/products.JPG);  
+
+*[Клиенты](https://github.com/yar21023/DB_for_DS/blob/main/customers.JPG);  
+
+*[Транзакции](https://github.com/yar21023/DB_for_DS/blob/main/transactions.JPG);
+
+*[Диаграмма](https://github.com/yar21023/DB_for_DS/blob/main/diagram.JPG). 
